@@ -1,10 +1,10 @@
 package com.cybertek.oop.inheritance;
 
+import com.cybertek.enums.Status;
 import com.cybertek.oop.encapsulation.User;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.stream.Stream;
 
 public class Project extends BaseEntity {
 
@@ -14,7 +14,7 @@ public class Project extends BaseEntity {
     private User assignedManager;
     private LocalDate startDate;
     private LocalDate endDate;
-    private String projectStatus;
+    private Status projectStatus;
     private String projectDetails;
 
     public Project(long id, LocalDateTime insertDateTime,
@@ -22,7 +22,7 @@ public class Project extends BaseEntity {
                    long lastUpdateUserId, String projectCode,
                    String projectName, User assignedManager,
                    LocalDate startDate, LocalDate endDate,
-                   String projectStatus, String projectDetails) {
+                   Status projectStatus, String projectDetails) {
         super(id, insertDateTime, insertUserId, lastUpdateDate, lastUpdateUserId);
         this.projectCode = projectCode;
         this.projectName = projectName;

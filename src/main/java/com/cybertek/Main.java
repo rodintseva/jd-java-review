@@ -3,6 +3,8 @@ package com.cybertek;
 import com.cybertek.core.Loops;
 import com.cybertek.core.Methods;
 import com.cybertek.core.SelectionStatement;
+import com.cybertek.enums.Gender;
+import com.cybertek.enums.Status;
 import com.cybertek.oop.abstraction.Service.UserService;
 import com.cybertek.oop.abstraction.implementstion.UserServiceImplementation;
 import com.cybertek.oop.encapsulation.Role;
@@ -32,14 +34,14 @@ public class Main {
         SelectionStatement.demoSwitchCaseStatement();
 
         //*****************OOP-Encapsulation*************************//
-        User user = new User("Mike", "Smith",new Role(2,"Manager"));
+        User user = new User("Mike", "Smith",new Role(2,"Manager"),Gender.MALE);
         System.out.println(user.getFirstName());
         System.out.println(user.getLastName());
         System.out.println(user.getRole().getDescription());
 
 
         Project project =new Project(1,LocalDateTime.now(), 1, LocalDateTime.now().minusDays(3),256,"25","MANDALORIAN",
-                new User("SUPERWOMEN","RODINTSEVA",new Role(1,"Manager")),LocalDate.now().minusDays(2),LocalDate.now().plusDays(96), "IN PROGRESS", "WORKING");
+                new User("SUPERWOMEN","RODINTSEVA",new Role(1,"Manager"), Gender.MALE),LocalDate.now().minusDays(2),LocalDate.now().plusDays(96), Status.INPROGRESS, "WORKING");
 
 
         /******************************oop-interface*******************************/
@@ -54,8 +56,9 @@ public class Main {
         employee.getEmployeeHours();
         ((Employee)employee2).getEmployeeHours(); // down casting
 
-
-
+/***********************ENUM************************************/
+        System.out.println(Gender.FEMALE);
+        System.out.println(Status.INPROGRESS.getValue().charAt(3));
 
     }
 }
