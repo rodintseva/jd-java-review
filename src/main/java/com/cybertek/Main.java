@@ -4,9 +4,12 @@ import com.cybertek.core.Loops;
 import com.cybertek.core.Methods;
 import com.cybertek.core.SelectionStatement;
 import com.cybertek.oop.abstraction.Service.UserService;
+import com.cybertek.oop.abstraction.implementstion.UserServiceImplementation;
 import com.cybertek.oop.encapsulation.Role;
 import com.cybertek.oop.encapsulation.User;
+import com.cybertek.oop.inheritance.BaseEntity;
 import com.cybertek.oop.inheritance.Project;
+import com.cybertek.oop.polimorfism.Employee;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -42,6 +45,17 @@ public class Main {
         /******************************oop-interface*******************************/
         UserService userService= new UserService();
         System.out.println(userService.userByFirstName("Mike").getLastName());
+
+      /******************************oop-polymorphism*******************************/
+
+        Employee employee =new Employee();
+        BaseEntity employee2=new Employee();
+        UserServiceImplementation userServiceImplementation= new UserService();
+        employee.getEmployeeHours();
+        ((Employee)employee2).getEmployeeHours(); // down casting
+
+
+
 
     }
 }
