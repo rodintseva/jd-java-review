@@ -2,10 +2,13 @@ package com.cybertek.oop.encapsulation;
 
 
 import com.cybertek.enums.Gender;
+import com.cybertek.oop.inheritance.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,7 +16,7 @@ import lombok.Setter;
 @Setter
 
 
-public class User {
+public class User extends BaseEntity {
 
 
     private String firstName;
@@ -21,5 +24,11 @@ public class User {
     private Role role;
     private Gender gender;
 
-
+    public User(long id, LocalDateTime insertDateTime, long insertUserId, LocalDateTime lastUpdateDate, long lastUpdateUserId, String firstName, String lastName, Role role, Gender gender) {
+        super(id, insertDateTime, insertUserId, lastUpdateDate, lastUpdateUserId);
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
+        this.gender = gender;
+    }
 }

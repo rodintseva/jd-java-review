@@ -32,4 +32,6 @@ public class Project extends BaseEntity {
         this.projectStatus = projectStatus;
         this.projectDetails = projectDetails;
     }
+
+
 }
